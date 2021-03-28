@@ -15,20 +15,20 @@ open class TimerButton: UIButton {
         startup()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         createGradientLayer()
         startup()
     }
     
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         layer.cornerRadius = bounds.height/2
         gradient.cornerRadius = bounds.height/2
         gradient.frame = bounds
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         if isEnabled { startup() }
     }
