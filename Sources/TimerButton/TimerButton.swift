@@ -1,6 +1,6 @@
 import UIKit
 
-class TimerButton: UIButton {
+open class TimerButton: UIButton {
     
     // MARK: - Private properties
     
