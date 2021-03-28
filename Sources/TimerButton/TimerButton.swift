@@ -64,6 +64,8 @@ class TimerButton: UIButton {
     }
     
     func startTimer() {
+        print("#Timer: started")
+        NSLog("#Timer:", "Started")
         countdownTimer = Timer.scheduledTimer(timeInterval: 1,
                                               target: self,
                                               selector: #selector(updateTime(_:)),
@@ -74,7 +76,7 @@ class TimerButton: UIButton {
     @objc func updateTime(_ timer: Timer) {
         //        timerLabel.text = "\(timeFormatted(totalTime))"
         
-        print("\(timeFormatted(Int(totalTime)))")
+        NSLog("#Timer:", "\(timeFormatted(Int(totalTime)))")
         
         if totalTime != 0 {
             totalTime -= 1
